@@ -88,7 +88,7 @@ export const projectsData = [
     description: "High-performance developer portfolio built with React and Vite. Features dark aesthetic UI tokens, SVG poster integration, verified credentials showcase, and accessible micro-interactions.",
     technologies: ["React 19", "Vite", "Vanilla CSS", "Modern Design Tokens", "Vercel"],
     liveUrl: "https://lavpandey.vercel.app",
-    githubUrl: "https://github.com/Mr7X00"
+    githubUrl: "https://github.com/Mr7X00/Portfolio"
   }
 ];
 
