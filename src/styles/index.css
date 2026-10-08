@@ -1,0 +1,353 @@
+/* ==========================================================================
+   LAV PANDEY PORTFOLIO — GLOBAL STYLES & DESIGN SYSTEM INTEGRATION
+   Imports: tokens.css, typography.css
+   ONE Universal Accent Theme (#9A523B) — Pure Focus on Content & Elegance
+   ========================================================================== */
+
+@import './tokens.css';
+@import './typography.css';
+
+/* Global Reset & Base Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: #000000;
+}
+
+/* Comfortable breathing margin for jump anchors */
+section[id],
+header[id],
+div[id] {
+  scroll-margin-top: 2rem;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: #000000;
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Main Layout Canvas
+   -------------------------------------------------------------------------- */
+.portfolio-main-canvas {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .portfolio-main-canvas {
+    padding: 1rem 1rem 3rem 1rem;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .portfolio-main-canvas {
+    padding: 0.75rem 0.75rem 2.5rem 0.75rem;
+  }
+}
+
+/* Background: Pure pitch black canvas (#000000) */
+body::before,
+body::after {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Selection & Scrollbar Styling (Styled with Universal Accent)
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-background);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Glass Surface System
+   -------------------------------------------------------------------------- */
+.glass-panel {
+  background-color: var(--color-surface);
+  backdrop-filter: var(--glass-blur-default);
+  -webkit-backdrop-filter: var(--glass-blur-default);
+  border: var(--border-width-thin) solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-medium);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-accent);
+}
+
+.glass-pill {
+  background-color: var(--color-surface);
+  backdrop-filter: var(--glass-blur-strong);
+  -webkit-backdrop-filter: var(--glass-blur-strong);
+  border: var(--border-width-thin) solid var(--border-glass);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-floating);
+}
+
+/* --------------------------------------------------------------------------
+   Button & Badge Primitives
+   -------------------------------------------------------------------------- */
+.accent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.65rem 1.35rem;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-extrabold);
+  color: #000000;
+  background-color: var(--color-accent);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 rgba(197, 155, 99, 0.35);
+  transition: all var(--transition-normal);
+}
+
+.accent-button:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 6px 20px 0 rgba(197, 155, 99, 0.5);
+  transform: translateY(-2px);
+}
+
+.accent-button:active {
+  background-color: var(--color-accent-strong);
+  transform: translateY(0);
+}
+
+.accent-button:focus-visible {
+  outline: none;
+  box-shadow: var(--state-focus-ring);
+}
+
+.accent-button:disabled,
+.accent-button[aria-disabled="true"] {
+  opacity: var(--state-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.65rem 1.35rem;
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent-light);
+  background-color: rgba(197, 155, 99, 0.08);
+  border: var(--border-width-thin) solid var(--border-accent);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.outline-button:hover {
+  background-color: rgba(197, 155, 99, 0.18);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.outline-button:active {
+  transform: translateY(0);
+}
+
+.outline-button:focus-visible {
+  outline: none;
+  box-shadow: var(--state-focus-ring);
+}
+
+.outline-button:disabled,
+.outline-button[aria-disabled="true"] {
+  opacity: var(--state-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Micro-interaction: Arrow & SVG icon slight forward translation on hover */
+.accent-button svg,
+.outline-button svg,
+.hero-btn-primary svg,
+.project-cta-primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.accent-button:hover svg,
+.outline-button:hover svg,
+.hero-btn-primary:hover svg,
+.project-cta-primary:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal Animation System (IntersectionObserver driven)
+   -------------------------------------------------------------------------- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.accent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.35rem 0.85rem;
+  font-size: var(--text-meta);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--color-accent-soft);
+  border: var(--border-width-thin) solid var(--border-accent);
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   Section Heading Primitives
+   -------------------------------------------------------------------------- */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-2xs);
+  border-bottom: var(--border-width-thin) solid var(--border-subtle);
+}
+
+.section-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: var(--text-section-title);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-accent) 0%, rgba(255, 255, 255, 0.03) 70%, transparent 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Micro Animations & Subtle Pulses
+   -------------------------------------------------------------------------- */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.pulse-indicator {
+  animation: pulseGlow 2.4s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility Focus-Visible Rings (Keyboard Navigation)
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 3px !important;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent) !important;
+  box-shadow: var(--state-focus-ring) !important;
+}
+
+/* Accessible Screen-Reader-Only Utility (SEO & Accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

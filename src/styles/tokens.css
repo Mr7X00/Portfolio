@@ -1,0 +1,146 @@
+/* ==========================================================================
+   LAV PANDEY PORTFOLIO — UNIVERSAL DESIGN TOKEN SYSTEM
+   Source of Truth: poster new.svg
+   Palette:
+   - Primary Accent: Warm Golden Amber / Bronze (#c59b63)
+   - Accent Hover: #d8aa72
+   - Deep Mocha Brown: #62472e
+   - Champagne Gold: #dfbe93
+   - Poster Cream / Ivory: #fff7e2
+   - Surface / Canvas: Deep Warm Carbon (#090a0d / #111217)
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. Universal Brand Accent Tokens (Extracted directly from Poster SVG)
+     Dominant Poster Banner: #C59B63 | RGB: 197, 155, 99 | HSL: 34, 47%, 58%
+     ------------------------------------------------------------------------ */
+  --color-accent: #c59b63;
+  --color-accent-rgb: 197, 155, 99;
+  --color-accent-hsl: 34, 47%, 58%;
+
+  /* High-Contrast & Hover Derivatives */
+  --color-accent-hover: #d8aa72;
+  --color-accent-strong: #62472e;
+  --color-accent-light: #dfbe93;
+  --color-accent-bright: #ebd5b3;
+
+  /* Translucent & Alpha Derivatives */
+  --color-accent-soft: rgba(197, 155, 99, 0.14);
+  --color-accent-subtle: rgba(197, 155, 99, 0.08);
+  --color-accent-transparent: rgba(197, 155, 99, 0.24);
+  --color-accent-glow: rgba(197, 155, 99, 0.38);
+  --color-accent-intense-glow: rgba(197, 155, 99, 0.55);
+
+  /* Specific Poster Identifiers */
+  --color-poster-mocha: #62472e;
+  --color-poster-cream: #fff7e2;
+  --color-poster-gold: #c59b63;
+  --color-poster-champagne: #ebdcc5;
+
+  /* ------------------------------------------------------------------------
+     2. Neutral Surface & Canvas Tokens
+     Pure Black Canvas (#000000) for ultimate OLED contrast & depth
+     ------------------------------------------------------------------------ */
+  --color-background: #000000;
+  --color-background-elevated: #070707;
+  --color-surface: rgba(14, 14, 14, 0.88);
+  --color-surface-hover: rgba(22, 22, 22, 0.92);
+  --color-surface-active: rgba(28, 28, 28, 0.96);
+
+  /* ------------------------------------------------------------------------
+     3. High-Legibility Typography Colors
+     ------------------------------------------------------------------------ */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-text-accent: #dfbe93;
+  --color-text-inverse: #090a0d;
+
+  /* ------------------------------------------------------------------------
+     4. Glass & Transparency Surface System
+     ------------------------------------------------------------------------ */
+  --glass-bg-subtle: rgba(18, 20, 26, 0.45);
+  --glass-bg-default: rgba(18, 20, 26, 0.68);
+  --glass-bg-strong: rgba(22, 25, 33, 0.84);
+  --glass-blur-subtle: blur(8px);
+  --glass-blur-default: blur(16px);
+  --glass-blur-strong: blur(24px);
+
+  /* ------------------------------------------------------------------------
+     5. Border Scale System
+     ------------------------------------------------------------------------ */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.14);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(197, 155, 99, 0.38);
+  --border-accent-strong: rgba(197, 155, 99, 0.78);
+  --border-accent-glow: rgba(197, 155, 99, 0.92);
+
+  /* Border Widths */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  /* ------------------------------------------------------------------------
+     6. Border Radius Scale System
+     ------------------------------------------------------------------------ */
+  --radius-xs: 0.25rem;   /* 4px - small tags / indicators */
+  --radius-sm: 0.375rem;  /* 6px - badges / sub-elements */
+  --radius-md: 0.625rem;  /* 10px - inputs / buttons */
+  --radius-lg: 0.875rem;  /* 14px - cards / modals */
+  --radius-xl: 1.25rem;   /* 20px - glass panels / hero */
+  --radius-2xl: 1.75rem;  /* 28px - large surfaces */
+  --radius-pill: 9999px;  /* Pill / circular buttons */
+
+  /* ------------------------------------------------------------------------
+     7. Elevation & Shadow Scale System
+     ------------------------------------------------------------------------ */
+  --shadow-subtle: 0 2px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 8px 24px -4px rgba(0, 0, 0, 0.55), 0 2px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-floating: 0 16px 40px -6px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+  --shadow-accent-glow: 0 12px 32px -4px rgba(197, 155, 99, 0.32), 0 0 1px 1px rgba(197, 155, 99, 0.4);
+  --shadow-accent-intense: 0 16px 44px -4px rgba(197, 155, 99, 0.5), 0 0 12px 2px rgba(197, 155, 99, 0.4);
+
+  /* ------------------------------------------------------------------------
+     8. Spacing Scale System
+     ------------------------------------------------------------------------ */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+
+  /* ------------------------------------------------------------------------
+     9. Interaction Color States
+     ------------------------------------------------------------------------ */
+  --state-default-bg: transparent;
+  --state-default-border: var(--border-subtle);
+  --state-hover-bg: var(--color-accent-soft);
+  --state-hover-border: var(--border-accent);
+  --state-active-bg: var(--color-accent-transparent);
+  --state-active-border: var(--color-accent);
+  --state-focus-ring: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-accent);
+  --state-disabled-opacity: 0.45;
+
+  /* ------------------------------------------------------------------------
+     10. Technology Watermark Foundation Tokens
+     ------------------------------------------------------------------------ */
+  --tech-watermark-opacity: 0.06;
+  --tech-watermark-opacity-hover: 0.12;
+  --tech-watermark-size: 56px;
+  --tech-watermark-blur: 0px;
+  --tech-watermark-color: var(--color-accent);
+
+  /* ------------------------------------------------------------------------
+     11. Motion Timing & Easing Curves
+     ------------------------------------------------------------------------ */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 160ms var(--ease-smooth);
+  --transition-normal: 260ms var(--ease-smooth);
+  --transition-slow: 400ms var(--ease-spring);
+}

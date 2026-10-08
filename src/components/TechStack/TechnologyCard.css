@@ -1,0 +1,138 @@
+/* ==========================================================================
+   TECHNOLOGY CARD COMPONENT STYLES (PHASE 9)
+   Interactive cards with logo animation, category pills, usage descriptions & focus states
+   ========================================================================== */
+
+.tech-interactive-card {
+  display: flex;
+  flex-direction: column;
+  justifyContent: space-between;
+  padding: 1.25rem 1.15rem;
+  background-color: var(--glass-bg-default);
+  backdrop-filter: var(--glass-blur-default);
+  -webkit-backdrop-filter: var(--glass-blur-default);
+  border: var(--border-width-thin) solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover effect */
+@media (hover: hover) and (pointer: fine) {
+  .tech-interactive-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-accent-glow);
+    background-color: var(--color-surface-hover);
+  }
+
+  .tech-interactive-card:hover .tech-card-logo-box {
+    transform: scale(1.08) rotate(2deg);
+  }
+
+  .tech-interactive-card:hover .tech-card-name {
+    color: #ffffff;
+  }
+}
+
+/* Active / Tap state */
+.tech-interactive-card:active {
+  transform: scale(0.98);
+}
+
+/* Focus visible state */
+.tech-interactive-card:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: var(--state-focus-ring);
+}
+
+/* Top Bar: Logo & Category Badge */
+.tech-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.tech-card-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: var(--border-width-thin) solid var(--border-subtle);
+  padding: 6px;
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.tech-card-category-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-accent);
+  background-color: var(--color-accent-subtle);
+  border: var(--border-width-thin) solid var(--border-subtle);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Title & Description */
+.tech-card-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.tech-card-usage {
+  font-size: 0.775rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+  flex: 1;
+}
+
+/* Footer Feature Pill */
+.tech-card-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding-top: 0.5rem;
+  border-top: var(--border-width-thin) solid var(--border-subtle);
+}
+
+.tech-card-feature-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .tech-interactive-card,
+  .tech-card-logo-box {
+    transition: none !important;
+    transform: none !important;
+  }
+}

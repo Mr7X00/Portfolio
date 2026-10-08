@@ -1,0 +1,59 @@
+/* Experience Section Interactive Styles */
+.exp-company-link {
+  transition: color var(--transition-fast);
+}
+
+.exp-company-link:hover {
+  color: var(--color-accent-light) !important;
+}
+
+.exp-company-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.exp-company-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.exp-role-link {
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.exp-role-link:hover {
+  color: #ffffff !important;
+  transform: translateX(2px);
+}
+
+.exp-role-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.exp-role-link:hover svg {
+  transform: translateX(2px);
+}
+
+.exp-doc-link {
+  transition: all var(--transition-fast);
+}
+
+.exp-doc-link:hover {
+  background-color: rgba(197, 155, 99, 0.22) !important;
+  border-color: var(--color-accent) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.exp-doc-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.exp-doc-link:hover svg {
+  transform: translate(1px, -1px);
+}
+
+.exp-company-link:focus-visible,
+.exp-doc-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}

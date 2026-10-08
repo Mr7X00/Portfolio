@@ -1,0 +1,23 @@
+{
+  "name": "lav-pandey-portfolio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lav Pandey - Interactive Digital Resume & Portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "developer"
+  ],
+  "author": "Lav Pandey",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vite": "^8.3.3"
+  }
+}
